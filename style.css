@@ -1,9 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap')
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 *{
     box-sizing: border-box;
 }
 
+: root{
+    --line-border-fill: navy;
+    --line-border-empty: cornflowerblue;
+}
 body{
     font-family: 'Muli', sans-serif;
     display: flex;
@@ -27,4 +31,71 @@ body{
     margin-bottom: 30px;
     max-width: 100%;
     width: 350px;
+}
+
+.progress-container::before{
+    content: "";
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 0%;
+    z-index: -1;
+}
+/* Blue Line */
+.progress{
+    background-color: blue;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 0%;
+    z-index: -1;
+    transition: .4s ease;
+
+}
+
+.circle{
+    background-color: cornflowerblue;
+    color: rebeccapurple;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid lavender;
+    transition: .4s ease;
+}
+
+.circle.active{
+    border-color: var(--line-border-fill);
+
+}
+
+.btn{
+    background-color: cornflowerblue;
+    color: white;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 8px 30px;
+    margin: 5px;
+}
+
+.btn:active{
+    transform: scale(.98);
+}
+
+.btn:focus{
+    outline: 0;
+}
+
+.btn:disabled{
+    background-color: var(--line-border-empty);
+    cursor: not-allowed;
 }
