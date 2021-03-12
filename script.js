@@ -38,10 +38,13 @@ function update(){
     progress.style.width = ((actives.length -1) / (circles.length -1)) * 100 + '%'
 
     if(currentActive === 1){
+        // if current active is 1 the previous button is disabled
         prev.disabled = true
     } else if(currentActive === circles.length){
+        // if current active is 4(the number of circles) the next button is disabled
         next.disabled = true
     } else{
+        // any other condition the buttons are both active
         prev.disabled = false
         next.disabled = false
     }
